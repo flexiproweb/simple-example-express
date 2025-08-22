@@ -1,0 +1,13 @@
+version: "3.8"
+# docker compose up --build
+services:
+  simple-example-express:
+    build: .
+    container_name: simple-express-app
+    image: my-custom-node-backend:1.0
+    ports:
+      # 4000 adalah host (port dari local) dan 3000 adalah port di container
+      - "4000:3000"
+    volumes:
+      - .:/usr/src/app #ini seperti WORKDIR, jadi ketika docker run, maka akan jalan di /usr/src/app. dan ketika docker build, maka akan jalan di .
+      # - /usr/src/app/node_modules, jgn mengunakan ini, karena node_modules akan otomatis di generate di dalam container, cocok untuk production
