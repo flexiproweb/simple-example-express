@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Route utama
 app.get("/", (req, res) => {
-  res.send("Hello World dari Express! sssssssss www ");
+  res.send("Hello World dari Express! Suceess ");
 });
 
 // Contoh route dengan parameter
